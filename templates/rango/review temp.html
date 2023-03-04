@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Sibei Zhou">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Review</title>
+
+ <!--    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/"> -->
+
+    
+
+    
+
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+	<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/headers.css' %}" rel="stylesheet">
+	<!-- <link href="{% static 'assets/list-groups.css' %}" rel="stylesheet"> -->
+	   <!-- <link href="{% static 'assets/sidebars.css' %}" rel="stylesheet"> -->
+  </head>
+   <!-- header -->
+  <header class="p-3 border-bottom text-bg-dark" >
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+		  <img src="{% static 'images/UOG.jpg' %}" alt="mdo" width="40" height="32" class="bi me-2">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 link-light">Category</a></li>
+          <li><a href="#" class="nav-link px-2 link-light">About us</a></li>
+          <li><a href="#" class="nav-link px-2 link-light">Contact us</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'media/cat.jpg' %}" alt="mdo" width="32" height="32" class="rounded-circle" border="1">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+	<script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+  </header>
+
+
+  <body>
+	<main class="d-flex flex-nowrap">
+	<!-- sidebars -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 200px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-1">GlasGo</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+
+	  <li>
+        <a href="#" class="nav-link text-white">
+          Food
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          Shopping
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          Accommodation
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          Entertainment
+        </a>
+      </li>
+    </ul>
+    <hr>
+  </div>
+  
+  
+ 
+
+   <div style="margin:0 auto;width:900px">
+        <!-- shop detail -->
+		  <div class="container">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{% static 'media/cat.jpg' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="250" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">KFC</h1>
+        <p class="lead">Restaurant chain known for its buckets of fried chicken, plus combo meals & sides.</p>
+      </div>
+    </div>
+  </div>   
+	   <hr>
+	   <!-- review -->
+	   <div><h3>Costomer Reviews</h3></div> 
+	    <div>
+	    {% if reviews %}
+	    <ul class="list-group" style="list-style-type:none">
+			{% for review in reviews %}
+				<li >
+					<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+					<img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+					<div class="d-flex gap-2 w-100 justify-content-between">
+					<div>
+						<h5 class="mb-6">{{ review.username }}</h5>
+						<p class="mb-6 opacity-75">{{ review.reviews }}</p>
+					</div>
+					<small class="opacity-50 text-nowrap">{{ review.stars }}</small>
+	  
+					</div>
+				</a>
+				</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<strong>There are no Review present.</strong>
+		{% endif %}
+		</div>
+		<hr>
+	   
+	   
+	   <!-- footer -->
+       <div>
+	   	   <strong>{{ boldmessage }}</strong><br />
+           <a href="/rango/">Index</a><br />
+		   <img src="{% static 'media/cat.jpg' %}" alt="Picture of a Cat" /> <!-- New line -->
+       </div>
+	   </div>
+	   	<script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
+	   <script src="/static/sidebars.js"></script>
+	   </main>
+    </body>
+
+</html>

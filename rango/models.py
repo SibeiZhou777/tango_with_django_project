@@ -25,4 +25,12 @@ class Page(models.Model):
     views = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.title
+        return self.url
+        
+class Review(models.Model):
+    username = models.CharField(max_length=32, unique=True)
+    stars = models.FloatField(default=0)
+    reviews = models.CharField(max_length=128)
+   
+    def __str__(self):
+        return self.username
