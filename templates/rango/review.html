@@ -72,6 +72,33 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+	  
+		.star_rating {
+
+        }
+        .star_rating input {
+            width: 0;
+            height: 0;
+            margin: 0;
+            visibility: hidden;
+        }
+        .star_rating label {
+            display: block;
+            float: left;
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            text-align: center;
+            font-size: 124px;
+            font-weight: bold;
+            color: red;
+        }
+        .star_rating label:before {
+            content: "★";
+        }
+        .star_rating input:checked~input~label:before {
+            content: "☆";
+        }
     </style>
 
     
@@ -82,7 +109,7 @@
 	<link href="{% static 'assets/sidebars.css' %}" rel="stylesheet"> -->
   </head>
    <!-- header -->
-  <header class="p-3 border-bottom text-bg-dark" >
+  <header class="p-3 border-bottom bg-dark" >
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -113,14 +140,13 @@
         </div>
       </div>
     </div>
-	<script src="/static/assets/dist/js/bootstrap.bundle.min.js"></script>
   </header>
 
 
   <body>
 	<main class="d-flex flex-nowrap">
 	<!-- sidebars -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 200px;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-dark" style="width: 200px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <span class="fs-1">GlasGo</span>
     </a>
@@ -156,22 +182,30 @@
 
    <div style="margin:0 auto;width:900px">
         <!-- shop detail -->
-		  <div class="container">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="{% static 'images/KFC.png' %}" class="d-block mx-lg-auto img-fluid" alt="no image" width="250" loading="lazy">
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">KFC</h1>
-        <p class="lead">Restaurant chain known for its buckets of fried chicken, plus combo meals & sides.</p>
-        <p class="lead">{{ avgStar.stars__avg }}</p>
-		<p class="lead">Restaurant chain known for its buckets of fried chicken, plus combo meals & sides.</p>
-      </div>
-    </div>
-  </div>   
-	   <hr>
-	   <!-- review -->
-	   <div><h3>Costomer Reviews</h3></div> 
+		<div class="container">
+			<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+				<div class="col-10 col-sm-8 col-lg-6">
+					<img src="{% static 'images/KFC.png' %}" class="d-block mx-lg-auto img-fluid" alt="no image" width="250" loading="lazy">
+				</div>
+				<div class="col-lg-6">
+					<h1 class="display-5 fw-bold lh-1 mb-3">KFC</h1>
+					<p class="lead">Restaurant chain known for its buckets of fried chicken, plus combo meals & sides.</p>
+					<p class="lead">
+					<script>
+						var num = {{ avgStar.stars__avg }};
+						var rounded = num.toFixed(1); // rounds to 2 decimal places
+						document.write(rounded);
+					</script>
+					</p>
+					<p class="lead">Restaurant chain known for its buckets of fried chicken, plus combo meals & sides.</p>
+				</div>
+			</div>
+		</div>   
+	    
+		<hr>
+	    
+		<!-- review -->
+	    <div><h3>Costomer Reviews</h3></div> 
 	    <div>
 	    {% if reviews %}
 	    <ul>
@@ -196,6 +230,26 @@
 		{% endif %}
 		</div>
 		<hr>
+		
+		<!-- form --> 
+		<div><h3>Add a Review</h3></div>
+		<div>
+			<form id="review_form" method="post" action="/rango/review/">
+				{% csrf_token %}
+				{% for hidden in form.hidden_fields %}
+					{{ hidden }}
+				{% endfor %}
+				{% for field in form.visible_fields %}
+				<div class="p-3">
+					{{ field.errors }}
+					{{ field.help_text }}
+					{{ field }}
+				</div>
+				{% endfor %}
+				<input type="submit" name="submit" value="Create Review" />
+			</form>
+		</div>
+		
 	   
 	   
 	   <!-- footer -->

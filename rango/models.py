@@ -29,7 +29,7 @@ class Page(models.Model):
         
 class Review(models.Model):
     username = models.CharField(max_length=32, unique=True)
-    stars = models.FloatField(default=0)
+    stars = models.DecimalField(default=0,max_digits=2, decimal_places=1)
     reviews = models.CharField(max_length=128)
    
     def __str__(self):
